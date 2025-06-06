@@ -59,7 +59,8 @@ DELETE FROM ingredientes WHERE ingrediente_id = 1
 
 -- Consultar todos los pedidos de un cliente:
 
-SELECT p.pedido_id 
-FROM pedidos AS p;
+SELECT p.pedido_id, c.nombre
+FROM pedido AS p
+JOIN clientes AS c ON p.cliente_id = c.cliente_id;
 
 
