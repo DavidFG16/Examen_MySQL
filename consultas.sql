@@ -72,3 +72,8 @@ SELECT * FROM productos
 SELECT * FROM ingredientes
 
 
+-- Buscar pizzas con un precio mayor a $100:*
+SELECT nombre 
+FROM productos 
+WHERE tipo_id = 1 AND precio > 100
+
