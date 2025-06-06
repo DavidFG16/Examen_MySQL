@@ -68,3 +68,7 @@ JOIN clientes AS c ON p.cliente_id = c.cliente_id;
 
 SELECT * FROM productos
 
+-- Listar todos los ingredientes disponibles para personalizar una pizza:
+SELECT * FROM ingredientes
+
+
