@@ -9,6 +9,9 @@ CREATE TABLE `clientes`(
     `telefono` INT NOT NULL,
     `direccion` VARCHAR(255) NOT NULL
 );
+
+ALTER TABLE `clientes` MODIFY COLUMN `telefono` BIGINT(10) NOT NULL
+
 CREATE TABLE `productos`(
     `producto_id` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `tipo_id` INT(11) NOT NULL,
@@ -17,7 +20,7 @@ CREATE TABLE `productos`(
     `precio` BIGINT NOT NULL
 );
 
-ALTER TABLE `productos` MODIFY COLUMN `presentación` ENUM('Pequeño, Mediano, Grande') NOT NULL
+ALTER TABLE `productos` MODIFY COLUMN `presentación` ENUM('Pequeño', 'Mediano', 'Grande') NOT NULL
 
 CREATE TABLE `combos`(
     `combo_id` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -40,6 +43,8 @@ CREATE TABLE `detalle_pedido`(
     `cantidad` BIGINT NOT NULL,
     `precio_unitario` BIGINT NOT NULL
 );
+
+ALTER TABLE detalle_pedido MODIFY COLUMN ingrediente_id INT(11) DEFAULT NULL
 
 CREATE TABLE `tipo_producto`(
     `tipo_id` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
