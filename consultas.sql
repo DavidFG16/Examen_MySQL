@@ -31,9 +31,35 @@ INSERT INTO detalle_pedido (pedido_id, producto_id, ingrediente_id, cantidad, pr
 VALUES(1, 2, 1, 2, 350)
 
 
--- Añadir ingredientes adicionales a una pizza en un pedido:**
+-- Añadir ingredientes adicionales a una pizza en un pedido:** -- La verdad no sé
 INSERT INTO detalle_pedido (pedido_id, producto_id, ingrediente_id, cantidad, precio_unitario)
-VALUES(1, 2, 1, 2, 350)
+VALUES(1, 2, 1, 3, 350)
 
+
+-- Consultar el detalle de un pedido (productos y sus ingredientes):
+SELECT dp.pedido_id, pro.nombre AS Producto, ing.nombre AS Ingrediente
+FROM detalle_pedido AS dp
+JOIN productos AS pro ON dp.producto_id = pro.producto_id
+JOIN ingredientes AS ing ON dp.ingrediente_id = ing.ingrediente_id
+
+
+-- Actualizar el precio de una pizza en el menú:
+UPDATE productos SET precio = 500 WHERE producto_id = 3 AND tipo_id = 1
+
+
+-- Actualizar la dirección de un cliente:*
+UPDATE clientes SET direccion = 'Ruitoque Alto basuritas' WHERE cliente_id = 1;
+
+-- Eliminar un producto del menú (bebida):
+DELETE FROM productos WHERE tipo_id = 2
+
+-- Eliminar un ingrediente de la base de datos:
+
+DELETE FROM ingredientes WHERE ingrediente_id = 1
+
+-- Consultar todos los pedidos de un cliente:
+
+SELECT p.pedido_id 
+FROM pedidos AS p;
 
 
