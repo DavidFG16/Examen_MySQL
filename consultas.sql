@@ -64,3 +64,7 @@ FROM pedido AS p
 JOIN clientes AS c ON p.cliente_id = c.cliente_id;
 
 
+-- Listar todos los productos disponibles en el menú (pizzas y bebidas):
+
+SELECT * FROM productos
+
